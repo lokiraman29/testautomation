@@ -34,6 +34,7 @@ from pages.Test.facebookloginpage import facebookloginpage
 @pytest.mark.smoketest 
 def test_facebook():
     with sync_playwright() as p:
+        
         browser = p.chromium.launch(headless=False)
         context = browser.new_context()
         page = context.new_page()
