@@ -1,0 +1,3 @@
+Screenshot saved: screenshots/eb_retail.png
+Screenshot saved: screenshots/eb_transport-logistics.png
+Screenshot saved: screenshots/eb_financial-services-insurance.png
