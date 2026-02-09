@@ -18,7 +18,8 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          playwright install --with-deps
+          pip install pytest pytest-html playwright
+          playwright install chromium
       - name: Run selected Playwright test file
         run: |
           pytest ${{ github.event.inputs.test_file }}
