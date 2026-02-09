@@ -8,7 +8,7 @@ def test_ebhome_form1_submission(data):
     with sync_playwright() as p:
         # Launch browser
         browser = p.chromium.launch(headless=True, slow_mo=500)
-        context = browser.new_context()
+        context = browser.new_context(ignore_https_errors=True)
         page = context.new_page()
         #page.pause()
         #datas=csvreader.get_row("testdata/data.csv")
