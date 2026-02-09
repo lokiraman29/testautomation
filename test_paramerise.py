@@ -7,7 +7,7 @@ def test_ebhome_form1_submission(data):
     """Test form submission on multiple pages (one page per test)."""
     with sync_playwright() as p:
         # Launch browser
-        browser = p.chromium.launch(headless=False, slow_mo=500)
+        browser = p.chromium.launch(headless=True, slow_mo=500)
         context = browser.new_context()
         page = context.new_page()
         #page.pause()
