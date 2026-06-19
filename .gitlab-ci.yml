@@ -1,0 +1,38 @@
+image: python:3.12-slim
+
+stages:
+  - test
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+  paths:
+    - .cache/pip
+
+playwright-tests:
+  stage: test
+  before_script:
+    - python -m pip install --upgrade pip
+    - pip install -r requirements.txt
+    - python -m playwright install --with-deps chromium
+  script:
+    - >
+      xvfb-run -a pytest -q
+      pages/test/testdemoqaform.py
+      pages/testbusinesspage.py
+      pages/testcheckbox.py
+      pages/testdemobuttons.py
+      pages/testdemotextboxpage.py
+      pages/testlink.py
+      pages/testmobilesimplans.py
+      pages/testradiobutton.py
+      pages/testwebtable.py
+      --junitxml=pytest-report.xml
+  artifacts:
+    when: always
+    reports:
+      junit: pytest-report.xml
+    paths:
+      - pytest-report.xml
+    expire_in: 7 days
