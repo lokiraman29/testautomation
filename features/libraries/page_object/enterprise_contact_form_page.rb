@@ -1,0 +1,2 @@
+class EnterpriseContactFormPage < EnterprisePage
+end

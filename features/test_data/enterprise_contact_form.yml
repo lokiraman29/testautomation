@@ -1,0 +1,7 @@
+valid_contact:
+  first_name: test
+  last_name: testtwo
+  work_email: test@gmail.com
+  contact_number: "0400011111"
+  company_name: optus
+  job_title: mr

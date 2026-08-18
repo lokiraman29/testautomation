@@ -1,0 +1,3 @@
+default: --profile reports
+pretty: --format pretty --publish-quiet
+reports: --format progress --publish-quiet --format html --out reports/cucumber/cucumber.html --format json --out reports/cucumber/cucumber.json --format AllureCucumber::CucumberFormatter --out reports/allure-results
